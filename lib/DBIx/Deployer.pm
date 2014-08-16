@@ -1,7 +1,9 @@
 use Modern::Perl;
 use Moops;
 
-class DBIx::Deployer::Patch 1.0.0 {
+our $VERSION = 1.0.1;
+
+class DBIx::Deployer::Patch {
     use Digest::MD5;
 
     has deployed => ( is => 'rw', isa => Bool, default => 0 );
@@ -111,7 +113,7 @@ class DBIx::Deployer::Patch 1.0.0 {
     }
 }
 
-class DBIx::Deployer 1.0.0 {
+class DBIx::Deployer {
     use DBI;
     use DBD::SQLite;
     use JSON::XS;
@@ -258,7 +260,7 @@ DBIx::Deployer - Light-weight database patch utility
 
 =head1 VERSION
 
-version 1.0.0
+version 1.0.1
 
 =head1 SYNOPSIS
 
@@ -314,7 +316,7 @@ The directory path where you will store your patch files.  PLEASE NOTE: DBIx::De
 
 =head2 deployer_db_file (Str)
 
-This is the file path where you would like your DBD::Deployer SQLite database to be stored. This is required if using SQLite to manage your patch information. 
+This is the file path where you would like your DBI::Deployer SQLite database to be stored. This is required if using SQLite to manage your patch information. 
 
 =head2 deployer_db (DBI::db)
 
@@ -346,7 +348,7 @@ If your database supports transactions, C<deploy_sql> will be rolled back if ver
 
 =head2 keep_newlines (Bool OPTIONAL defaults to false)
 
-For convenience and SQL readability, newlines are allowed in the SQL string values in the JSON patch files contrary to the JSON specification.  By default, these newlines will be converted to spaces before being passed to the parser.  If for some reason these transformation must not be done, set this attribute to true.
+For convenience and SQL readability, newlines are allowed in the SQL string values in the JSON patch files contrary to the JSON specification.  By default, these newlines will be converted to spaces before being passed to the parser.  If for some reason these transformations must not be done, set this attribute to true.
 
 =head1 METHODS
 
