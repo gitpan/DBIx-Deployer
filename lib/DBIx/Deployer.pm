@@ -1,7 +1,7 @@
 use Modern::Perl;
 use Moops;
 
-our $VERSION = 1.0.1;
+our $VERSION = 1.0.2;
 
 class DBIx::Deployer::Patch {
     use Digest::MD5;
@@ -260,7 +260,7 @@ DBIx::Deployer - Light-weight database patch utility
 
 =head1 VERSION
 
-version 1.0.1
+version 1.0.2
 
 =head1 SYNOPSIS
 
