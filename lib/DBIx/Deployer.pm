@@ -3,7 +3,7 @@ use Modern::Perl;
 use Moops;
 
 
-class DBIx::Deployer::Patch 1.0.4 {
+class DBIx::Deployer::Patch 1.0.5 {
     use Digest::MD5;
 
     has deployed => ( is => 'rw', isa => Bool, default => 0 );
@@ -113,7 +113,7 @@ class DBIx::Deployer::Patch 1.0.4 {
     }
 }
 
-class DBIx::Deployer 1.0.4 {
+class DBIx::Deployer 1.0.5 {
     use DBI;
     use DBD::SQLite;
     use JSON::XS;
@@ -260,7 +260,7 @@ DBIx::Deployer - Light-weight database patch utility
 
 =head1 VERSION
 
-version v1.0.4
+version v1.0.5
 
 =head1 SYNOPSIS
 
@@ -270,7 +270,7 @@ version v1.0.4
       target_username => 'sa',
       target_password => '1234',
       patch_path => '../patches/',
-      deployer_db => 'deployer.db',
+      deployer_db_file => 'deployer.db',
     );
 
     # Run all patches (skipping over those already deployed)
@@ -316,7 +316,7 @@ The directory path where you will store your patch files.  PLEASE NOTE: DBIx::De
 
 =head2 deployer_db_file (Str)
 
-This is the file path where you would like your DBI::Deployer SQLite database to be stored. This is required if using SQLite to manage your patch information. 
+This is the file path where you would like your DBIx::Deployer SQLite database to be stored. This is required if using SQLite to manage your patch information. 
 
 =head2 deployer_db (DBI::db)
 
